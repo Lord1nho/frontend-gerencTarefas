@@ -1,0 +1,63 @@
+.menu {
+    padding: 16px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffb400;
+    align-items: center;
+    height: 68px;
+}
+
+.menu_options {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu_options a{
+    margin: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.menu_options a:hover {
+    margin: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #283d50;
+}
+
+.login_container {
+    display: flex;
+    justify-content: center;  /* Centraliza horizontalmente */
+    align-items: center;      /* Centraliza verticalmente */ 
+    min-height: calc(100vh - 68px);
+
+}
+
+.login_form {
+    display: flex;
+    padding: 40px;
+    flex-direction: column;
+    background-color: #ffb400;
+    width: 32rem;
+    justify-content: center;
+}
+
+.login_form label{
+    margin-top: 12px;
+    margin-bottom: 4px;
+}
+
+.login_form input{
+    height: 28px;
+}
+
+.login_form button{
+    margin-top: 20px;
+    width: 50%;
+    height: 28px;
+    align-items: center;
+}
+
+.forgot_password:hover {
+    color: #283d50 ;
+}
