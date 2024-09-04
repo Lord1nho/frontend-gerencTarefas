@@ -1,4 +1,5 @@
 "use client";
+import axios from "axios";
 import styles from "./Login.module.css";
 import Link from "next/link";
 import { useState } from "react";
@@ -23,6 +24,17 @@ const Login = () => {
 
     console.log("Email:", emailInput.value);
     console.log("Senha:", passwordInput.value);
+
+    axios.post('http://localhost:3001/login', {
+        email: emailInput.value,
+        password: passwordInput.value
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
 
     // Aqui você pode adicionar a lógica para autenticar o usuário
   };
