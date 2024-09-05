@@ -2,11 +2,13 @@
 
 import Link from "next/link";
 import styles from "../Login/Login.module.css";
-import { useState } from "react";
+import { useReducer, useState } from "react";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const Register = () => {
     
+  const router = useRouter();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     
@@ -31,6 +33,8 @@ const Register = () => {
       })
       .then(function (response) {
         console.log(response);
+        alert('Conta Criada com sucesso. Realize o Login agora <3.')
+        router.push('/Login');
       })
       .catch(function (error) {
         console.error(error);

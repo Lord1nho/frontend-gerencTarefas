@@ -3,10 +3,12 @@ import axios from "axios";
 import styles from "./Login.module.css";
 import Link from "next/link";
 import { useState } from "react";
-
+import { useRouter } from "next/navigation";
 
 
 const Login = () => {
+
+    const router = useRouter();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     
@@ -30,13 +32,19 @@ const Login = () => {
         password: passwordInput.value
       })
       .then(function (response) {
+        const accessToken = response.data.accessToken
+        const refreshToken = response.data.refreshToken
         console.log(response);
+        router.push('/HomeScreen')
+        localStorage.setItem('accessToken', accessToken);
+        localStorage.setItem('refreshToken', refreshToken);
       })
       .catch(function (error) {
+        alert('E-mail ou Senha incorretos')
         console.error(error);
+        emailInput.value = '';
+        passwordInput.value = '';
       });
-
-    // Aqui você pode adicionar a lógica para autenticar o usuário
   };
 
     return ( 
