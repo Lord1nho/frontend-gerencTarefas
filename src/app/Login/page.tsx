@@ -14,7 +14,7 @@ const Login = () => {
     
       // Função para lidar com o envio do formulário
   const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault(); // Previne o comportamento padrão de recarregar a página
+    event.preventDefault(); // Previne o comportamento padrão de recarregar a páginaj
     
     // Captura os valores diretamente dos inputs no momento do submit
     const form = event.target as HTMLFormElement;
