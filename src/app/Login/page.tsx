@@ -34,10 +34,12 @@ const Login = () => {
       .then(function (response) {
         const accessToken = response.data.accessToken
         const refreshToken = response.data.refreshToken
+        const userId = response.data.user.id
         console.log(response);
         router.push('/HomeScreen')
         localStorage.setItem('accessToken', accessToken);
         localStorage.setItem('refreshToken', refreshToken);
+        localStorage.setItem('userId', userId);
       })
       .catch(function (error) {
         alert('E-mail ou Senha incorretos')

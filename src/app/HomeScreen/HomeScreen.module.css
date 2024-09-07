@@ -1,0 +1,27 @@
+.todolist_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 68px);
+}
+
+.todolist_content {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.todolist_content h2{
+    text-align: center;
+    margin: 4px;
+ }
+ 
+
+.todolist_input{
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+
