@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Front-End - Gerenciador de Tarefas
 
-## Getting Started
+## Consumindo api [gerenciador de tarefas](https://github.com/Lord1nho/backend_GerenciadTarefas)
 
-First, run the development server:
+##
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Guia de Instalação
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Clone esse repositório (recomendado fazer um fork) na sua máquina utilizando o comando:
+`git clone @webURLdoprojeto`
+2. Abra um terminal na pasta que o projeto foi clonado (cmd do Windows ou terminal da IDE que vc estiver utilizando)
+3. Utilize o comando `npm i` para instalar as dependências do projeto
+4. Tudo Pronto, você pode rodar o seu projeto utilizando o `npm run dev` E utilizar postman ou insomnia para testar as requisições. <3
+---
+## Páginas e Funcionalidades
+>Login e Register
+- `Login e Register`: As Duas páginas responsáveis pelo cadastro e login de cada usuário, fazendo requisições ao back-end. 
+- Com o usuário logado no sistema, atributos como o `accessToken`, `refreshToken` e `userId` são salvos em localStorage na sessão para serem utilizados pelo front e pelo back-end, quando forem solicitados.
+- Os dados contidos no LocalStorage são limpos após o usuário fazer `logout`. 
+> HomeScreen
+- É a página do Gerenciador de Tarefas em si
+- Após o login do usuário, ele poderá:
+1. Criar Tarefas
+- O usuário pode digitar o nome e descrição da tarefa.
+2. Marcar Tarefas como feitas
+- O usuário pode marcar a checkbox caso ele tenha finalizado a tarefa
+![Imagem da Checkbox](./public/fotoCheckbox.PNG)
+- Após a página ser atualizada (inclusão de novo item, ou recarregamento da página) o item desaparecerá da lista de tarefas a serem concluídas
+3. Excluir Tarefas
+O usuário poderá excluir tarefas utilizando o ícone da lixeira.
+![Imagem da lixeira](./public/telaLixeira.PNG)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+>Botão Logout
+No momento que o usuário desejar encerrar sua sessão, todos os campos salvos em localStorage serão limpos e o usuário deverá se autenticar novamente para usufruir dos serviços
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+---
+## Referências e documentação
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Documentação do framework NextJS](https://nextjs.org/)
+- [Back-end para requisições Gerenciador de Tarefas](https://github.com/Lord1nho/backend_GerenciadTarefas)

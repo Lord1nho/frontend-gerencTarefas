@@ -70,13 +70,16 @@ const ManageScreen = () => {
       .then(function (response) {
         console.log(response);
         form.reset();
-        alert("Tarefa Criada!");
         getTasks(); // Atualiza a lista de tarefas após criar uma
       })
       .catch(function (error) {
         console.error(error);
       });
   };
+
+  useEffect(() => {
+    getTasks();
+  }, []);
 
   // Função para buscar tarefas
   const getTasks = () => {
@@ -162,7 +165,7 @@ const ManageScreen = () => {
               placeholder="Descrição"
             />
             <div className={styles.todoList_button}>
-              <button type="submit">+</button>
+              <button type="submit">Adicionar Tarefa</button>
             </div>
           </form>
           <div className={styles.todoList_tasks}>
