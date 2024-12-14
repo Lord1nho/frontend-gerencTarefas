@@ -5,6 +5,7 @@ import styles from "../Login/Login.module.css";
 import { useReducer, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import FormBox from "../../components/Formbox/FormBox";
 
 const Register = () => {
     
@@ -51,20 +52,7 @@ const Register = () => {
                 <Link href="#">Registrar</Link>
                 </div>
             </nav>
-            <section className = {styles.login_container}>
-                <form className={styles.login_form} onSubmit={handleSubmit}>
-                <h2>Registrar</h2>
-                
-                <label htmlFor="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Digite seu email" required />
-                
-                <label htmlFor="password">Senha</label>
-                <input type="password" id="password" name="password" placeholder="Digite sua senha" required />
-                
-                <button type="submit">Entrar</button>
-                
-                </form>
-        </section>
+            <FormBox handleSubmit={handleSubmit} formType="register" />;
         </main>
     );
 }

@@ -4,6 +4,7 @@ import styles from "./Login.module.css";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import FormBox from "@/components/Formbox/FormBox";
 
 
 const Login = () => {
@@ -58,21 +59,7 @@ const Login = () => {
                     <Link href="/Register">Registrar</Link>
                 </div>
             </nav>
-            <section className = {styles.login_container}>
-                <form className={styles.login_form} onSubmit={handleSubmit}>
-                <h2>Login</h2>
-                
-                <label htmlFor="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Digite seu email" required />
-                
-                <label htmlFor="password">Senha</label>
-                <input type="password" id="password" name="password" placeholder="Digite sua senha" required />
-                
-                <button type="submit">Entrar</button>
-                
-                <a href="" className={styles.forgot_password}>Esqueceu sua senha?</a>
-                </form>
-        </section>
+            <FormBox handleSubmit={handleSubmit} formType="login" />;
         </main>
     );
 }
